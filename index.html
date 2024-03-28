@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ Accordion</title>
+<style>
+body{
+    margin-top: 100px;
+} 
+.accordion {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.faq-question {
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.faq-answer {
+    padding: 10px;
+    display: none;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.faq-question:hover {
+    background-color: #ff08a0;
+}
+
+.faq-item {
+    background-color: #f9f9f9;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+                -4px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+</style>
+</head>
+<body>
+   
+<div class="faq-item">
+  <div class="faq-question">What courses does Aptech offer?</div>
+  <div class="faq-answer">Aptech offers a wide range of courses including programming languages, web development, graphic design, animation, and more.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">Is Aptech recognized internationally?</div>
+  <div class="faq-answer">Yes, Aptech is recognized internationally and has a strong presence in over 40 countries.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">Are Aptech instructors experienced?</div>
+  <div class="faq-answer">Yes, Aptech instructors are highly experienced professionals in their respective fields, ensuring quality education.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">Does Aptech provide job placement assistance?</div>
+  <div class="faq-answer">Yes, Aptech offers job placement assistance to its students through its extensive network of industry contacts.</div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">Can I study at Aptech remotely?</div>
+  <div class="faq-answer">Yes, Aptech offers online courses for those who prefer to study remotely, providing flexibility in learning.</div>
+</div>
+
+<script>
+  // JavaScript to toggle FAQ answers
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const isActive = answer.style.display === 'block';
+
+      // Close all answers
+      faqQuestions.forEach(q => {
+        q.nextElementSibling.style.display = 'none';
+      });
+
+      // Toggle current answer
+      if (!isActive) {
+        answer.style.display = 'block';
+      }
+    });
+  });
+</script>
+</body>
+</html>
